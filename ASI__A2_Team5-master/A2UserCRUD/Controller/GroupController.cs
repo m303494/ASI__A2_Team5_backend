@@ -44,7 +44,7 @@ namespace A2UserCRUD.Controller
             return group;
         }
 
-        [HttpDelete("/api/group/{id}")]
+        [HttpDelete("/api/groups/{id}")]
         public ActionResult<string> DeleteGroup(string id)
         {
             _service.DeleteGroup(id);

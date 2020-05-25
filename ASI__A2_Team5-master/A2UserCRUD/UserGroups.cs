@@ -7,7 +7,8 @@ namespace A2UserCRUD
 {
     public class UserGroups
     {
-        public String User_id { get; set; }
-        public String Group_id { get; set; }
+        public int UG_id { get; set; }
+        public int User_id { get; set; }
+        public int Group_id { get; set; }
     }
 }

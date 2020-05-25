@@ -7,7 +7,7 @@ namespace A2UserCRUD
 {
     public class Admin
     {
-        public String Admin_id { get; set; }
-        public String User_id { get; set; }
+        public int Admin_id { get; set; }
+        public int User_id { get; set; }
     }
 }

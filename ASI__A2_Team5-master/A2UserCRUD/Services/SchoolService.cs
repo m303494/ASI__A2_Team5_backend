@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,20 +17,19 @@ namespace A2UserCRUD.Services
 
         public School AddSchool(School school)
         {
-            _schools.Add(school);
+            string query = "INSERT INTO school (School_id, School_name, Abbreviation) VALUES(" + school.School_id + ",'" + school.School_name + "', '" + school.Abbreviation + "')";
+            var con = new DBConnect();
+            con.Insert(query);
+
             return school;
             throw new NotImplementedException();
         }
 
         public string DeleteSchool(string id)
         {
-            for (var index = _schools.Count - 1; index >= 0; index--)
-            {
-                if (_schools[index].School_id == id)
-                {
-                    _schools.RemoveAt(index);
-                }
-            }
+            string query = "DELETE FROM school WHERE School_id='" + id + "'";
+            var con = new DBConnect();
+            con.Delete(query);
 
             return id;
             throw new NotImplementedException();
@@ -37,19 +37,26 @@ namespace A2UserCRUD.Services
 
         public List<School> GetSchools()
         {
+            string query = "SELECT * FROM school";
+            var con = new DBConnect();
+            var result = con.Select(query);
+            List<School> _schools = result.AsEnumerable().Select(m => new School()
+            {
+                School_id = m.Field<Int32>("School_id"),
+                School_name = m.Field<string>("School_name"),
+                Abbreviation = m.Field<string>("Abbreviation")
+            }).ToList();
+
             return _schools;
             throw new NotImplementedException();
         }
 
         public School UpdateSchool(string id, School school)
         {
-            for (var index = _schools.Count - 1; index >= 0; index--)
-            {
-                if (_schools[index].School_id == id)
-                {
-                    _schools[index] = school;
-                }
-            }
+            string query = "UPDATE school SET School_name='" + school.School_name + "', Abbreviation='" + school.Abbreviation + "' WHERE School_id='" + id + "'";
+            var con = new DBConnect();
+            con.Update(query);
+
             return school;
             throw new NotImplementedException();
         }

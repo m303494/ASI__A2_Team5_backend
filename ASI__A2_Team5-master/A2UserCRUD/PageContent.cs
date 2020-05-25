@@ -7,12 +7,12 @@ namespace A2UserCRUD
 {
     public class PageContent
     {
-        public String Page_id { get; set; }
-        public String User_id { get; set; }
+        public int Page_id { get; set; }
+        public int User_id { get; set; }
         public String Text { get; set; }
-        public String Type { get; set; }
+        public int Type { get; set; }
         public String Date { get; set; }
-        public String Is_deleted { get; set; }
+        public int Is_deleted { get; set; }
     }
 
 }

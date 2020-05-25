@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ASI__A2_Team5-master\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj": {}
+    "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj": {}
   },
   "projects": {
-    "E:\\ASI__A2_Team5-master\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj": {
+    "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ASI__A2_Team5-master\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
         "projectName": "A2UserCRUD",
-        "projectPath": "E:\\ASI__A2_Team5-master\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\ASI__A2_Team5-master\\ASI__A2_Team5-master\\A2UserCRUD\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +44,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.20, )"
             }
           },
           "imports": [
@@ -61,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

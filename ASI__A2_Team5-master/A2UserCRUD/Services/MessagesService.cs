@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,41 +15,53 @@ namespace A2UserCRUD.Services
             _messages = new List<Messages>();
         }
 
-        public List<Messages> GetMessages()
-        {
-            return _messages;
-        }
-
         public Messages AddMessages(Messages message)
         {
-            _messages.Add(message);
-            return message;
-        }
-
-        public Messages UpdateMessages(String id, Messages message)
-        {
-            for (var index = _messages.Count - 1; index >= 0; index--)
-            {
-                if (_messages[index].Msg_id == id)
-                {
-                    _messages[index] = message;
-                }
-            }
+            string query = "INSERT INTO messages (Msg_id, Id_sender, Id_receiver, Content, TimeStamp) VALUES(" + message.Msg_id + "," + message.Id_sender + ", " + message.Id_receiver + ", '" + message.Content + "', '" + message.TimeStamp + "')";
+            var con = new DBConnect();
+            con.Insert(query);
 
             return message;
+            throw new NotImplementedException();
         }
 
         public String DeleteMessages(String id)
         {
-            for (var index = _messages.Count - 1; index >= 0; index--)
-            {
-                if (_messages[index].Msg_id == id)
-                {
-                    _messages.RemoveAt(index);
-                }
-            }
+            string query = "DELETE FROM messages WHERE Msg_id='" + id + "'";
+            var con = new DBConnect();
+            con.Delete(query);
 
             return id;
+            throw new NotImplementedException();
         }
+        public List<Messages> GetMessages()
+        {
+            string query = "SELECT * FROM messages";
+            var con = new DBConnect();
+            var result = con.Select(query);
+            List<Messages> _messages = result.AsEnumerable().Select(m => new Messages()
+            {
+                Msg_id = m.Field<Int32>("Msg_id"),
+                Id_sender = m.Field<Int32>("Id_sender"),
+                Id_receiver = m.Field<Int32>("Id_receiver"),
+                Content = m.Field<string>("Content"),
+                TimeStamp = m.Field<string>("TimeStamp")
+            }).ToList();
+
+            return _messages;
+            throw new NotImplementedException();
+        }
+
+        public Messages UpdateMessages(String id, Messages message)
+        {
+            string query = "UPDATE messages SET Id_sender='" + message.Id_sender + "', Id_receiver='" + message.Id_receiver + "', Content='" + message.Content + "', TimeStamp='" + message.TimeStamp + "' WHERE Msg_id='" + id + "'";
+            var con = new DBConnect();
+            con.Update(query);
+
+            return message;
+            throw new NotImplementedException();
+        }
+
+        
     }
 }

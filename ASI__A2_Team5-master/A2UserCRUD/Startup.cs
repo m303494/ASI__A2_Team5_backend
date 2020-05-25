@@ -36,6 +36,7 @@ namespace A2UserCRUD
             services.AddSingleton<IPageContentService, PageContentService>();
             services.AddSingleton<ISchoolService, SchoolService>();
             services.AddSingleton<IUserGroups, UserGroupsServices>();
+            services.AddSingleton<ICourseService, CourseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

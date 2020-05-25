@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,20 +16,19 @@ namespace A2UserCRUD.Services
 
         public Groups AddGroup(Groups group)
         {
-            _groups.Add(group);
+            string query = "INSERT INTO groups (Group_id, Group_No, Group_Name, Description, Date_created, Is_deleted) VALUES(" + group.Group_id + "," + group.Group_No + ", '" + group.Group_Name + "', '" + group.Description + "', '" + group.Date_created + "', " + group.Is_deleted + ")";
+            var con = new DBConnect();
+            con.Insert(query);
+
             return group;
             throw new NotImplementedException();
         }
 
         public string DeleteGroup(string id)
         {
-            for (var index = _groups.Count - 1; index >= 0; index--)
-            {
-                if (_groups[index].Group_id == id)
-                {
-                    _groups.RemoveAt(index);
-                }
-            }
+            string query = "DELETE FROM groups WHERE Group_id='" + id + "'";
+            var con = new DBConnect();
+            con.Delete(query);
 
             return id;
             throw new NotImplementedException();
@@ -36,19 +36,29 @@ namespace A2UserCRUD.Services
 
         public List<Groups> GetGroups()
         {
+            string query = "SELECT * FROM groups";
+            var con = new DBConnect();
+            var result = con.Select(query);
+            List<Groups> _groups = result.AsEnumerable().Select(m => new Groups()
+            {
+                Group_id = m.Field<Int32>("Group_id"),
+                Group_No = m.Field<Int32>("Group_No"),
+                Group_Name = m.Field<string>("Group_Name"),
+                Description = m.Field<string>("Description"),
+                Date_created = m.Field<string>("Date_created"),
+                Is_deleted = m.Field<Int32>("Is_deleted")
+            }).ToList();
+
             return _groups;
             throw new NotImplementedException();
         }
 
         public Groups UpdateGroup(string id, Groups group)
         {
-            for (var index = _groups.Count - 1; index >= 0; index--)
-            {
-                if (_groups[index].Group_id == id)
-                {
-                    _groups[index] = group;
-                }
-            }
+            string query = "UPDATE groups SET Group_No='" + group.Group_No + "', Group_Name='" + group.Group_Name + "', Description='" + group.Description + "', Date_created='" + group.Date_created + "', Is_deleted='" + group.Is_deleted + "' WHERE Group_id='" + id + "'";
+            var con = new DBConnect();
+            con.Update(query);
+
             return group;
             throw new NotImplementedException();
         }

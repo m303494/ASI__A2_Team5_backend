@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,20 +17,19 @@ namespace A2UserCRUD.Services
 
         public UserGroups AddUserGroup(UserGroups userGroup)
         {
-            _UGs.Add(userGroup);
+            string query = "INSERT INTO usergroups (UG_id, User_id, Group_id) VALUES(" + userGroup.UG_id + "," + userGroup.User_id + "," + userGroup.Group_id + ")";
+            var con = new DBConnect();
+            con.Insert(query);
+
             return userGroup;
             throw new NotImplementedException();
         }
 
         public string DeleteUserGroup(string id)
         {
-            for (var index = _UGs.Count - 1; index >= 0; index--)
-            {
-                if (_UGs[index].User_id == id)
-                {
-                    _UGs.RemoveAt(index);
-                }
-            }
+            string query = "DELETE FROM usergroups WHERE UG_id='" + id + "'";
+            var con = new DBConnect();
+            con.Delete(query);
 
             return id;
             throw new NotImplementedException();
@@ -37,19 +37,26 @@ namespace A2UserCRUD.Services
 
         public List<UserGroups> GetUserGroups()
         {
+            string query = "SELECT * FROM usergroups";
+            var con = new DBConnect();
+            var result = con.Select(query);
+            List<UserGroups> _UGs = result.AsEnumerable().Select(m => new UserGroups()
+            {
+                UG_id = m.Field<Int32>("UG_id"),
+                User_id = m.Field<Int32>("User_id"),
+                Group_id = m.Field<Int32>("Group_id")
+            }).ToList();
+
             return _UGs;
             throw new NotImplementedException();
         }
 
         public UserGroups UpdateUserGroup(string id, UserGroups userGroups)
         {
-            for (var index = _UGs.Count - 1; index >= 0; index--)
-            {
-                if (_UGs[index].User_id == id)
-                {
-                    _UGs[index] = userGroups;
-                }
-            }
+            string query = "UPDATE usergroups SET User_id='" + userGroups.User_id + "', Group_id='" + userGroups.Group_id + "' WHERE UG_id='" + id + "'";
+            var con = new DBConnect();
+            con.Update(query);
+
             return userGroups;
             throw new NotImplementedException();
         }

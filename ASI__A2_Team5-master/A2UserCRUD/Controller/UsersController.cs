@@ -38,7 +38,7 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPut("/api/users/{id}")]
-        public ActionResult<User> UpdateProduct(string id, [FromBody]User user)
+        public ActionResult<User> UpdateUser(string id, [FromBody]User user)
         {
             _service.UpdateUser(id, user);
             return user;

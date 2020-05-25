@@ -7,9 +7,8 @@ namespace A2UserCRUD
 {
     public class School
     {
-        public String School_id { get; set; }
-        public String Name { get; set; }
+        public int School_id { get; set; }
+        public String School_name { get; set; }
         public String Abbreviation { get; set; }
-        public String User_id { get; set; }
     }
 }
