@@ -20,7 +20,7 @@ namespace A2UserCRUD.Services
 
         public User AddUser(User user)
         {
-            string query = "INSERT INTO user (User_id, Username, Gender, Nationality, Password, Birthdate, Course_id) VALUES(" + user.User_id + ",'" + user.Username + "', '" + user.Gender + "', '" + user.Nationality + "', '" + user.Password + "', '" + user.Birthdate + "', '" + user.Course_id + "')";
+            string query = "INSERT INTO `mentoringacademy`.`User` (Username, Gender, Nationality, Password, Birthdate, Course_id) VALUES('" + user.Username + "', '" + user.Gender + "', '" + user.Nationality + "', '" + user.Password + "', '" + user.Birthdate + "', '" + user.Course_id + "')";
             var con = new DBConnect();
             try {
                 con.Insert(query);
@@ -36,7 +36,7 @@ namespace A2UserCRUD.Services
 
         public string DeleteUser(string id)
         {
-            string query = "DELETE FROM user WHERE User_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`User` WHERE User_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -46,7 +46,7 @@ namespace A2UserCRUD.Services
 
         public List<User> GetUsers()
         {
-            string query = "SELECT * FROM user";
+            string query = "SELECT * FROM `mentoringacademy`.`User`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<User> _users = result.AsEnumerable().Select(m => new User()
@@ -66,12 +66,28 @@ namespace A2UserCRUD.Services
 
         public User UpdateUser(string id, User user)
         {
-            string query = "UPDATE user SET Username='" + user.Username + "', Gender='" + user.Gender + "', Nationality='" + user.Nationality + "', Password='" + user.Password + "', Birthdate='" + user.Birthdate + "', Course_id='" + user.Course_id + "' WHERE User_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`User` SET Username='" + user.Username + "', Gender='" + user.Gender + "', Nationality='" + user.Nationality + "', Password='" + user.Password + "', Birthdate='" + user.Birthdate + "', Course_id='" + user.Course_id + "' WHERE User_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 
             return user;
             throw new NotImplementedException();
+        }
+
+        public Nullable<int> AuthUser(User user)
+        {
+            Nullable<int> res;
+            string query = "SELECT User_id FROM `mentoringacademy`.`User` WHERE Username='" + user.Username + "' AND Password='" + user.Password + "'";
+            var con = new DBConnect();
+            res = (Nullable<Int32>)con.RunSQL(query);
+            if(res == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return res;
+            }
         }
     }
 }

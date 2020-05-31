@@ -16,7 +16,7 @@ namespace A2UserCRUD.Services
         }
         public Mentee AddMentee(Mentee mentee)
         {
-            string query = "INSERT INTO mentee (Mentee_id, User_id, Mentor_id, Qualification) VALUES(" + mentee.Mentee_id + "," + mentee.User_id + ", " + mentee.Mentor_id + ", '" + mentee.Qualification + "')";
+            string query = "INSERT INTO `mentoringacademy`.`Mentee` (Mentee_id, User_id, Mentor_id, Qualification) VALUES(" + mentee.Mentee_id + "," + mentee.User_id + ", " + mentee.Mentor_id + ", '" + mentee.Qualification + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -25,7 +25,7 @@ namespace A2UserCRUD.Services
         }
         public string DeleteMentee(string id)
         {
-            string query = "DELETE FROM mentee WHERE Mentee_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`Mentee` WHERE Mentee_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -35,7 +35,7 @@ namespace A2UserCRUD.Services
 
         public List<Mentee> GetMentees()
         {
-            string query = "SELECT * FROM mentee";
+            string query = "SELECT * FROM `mentoringacademy`.`Mentee`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<Mentee> _mentees = result.AsEnumerable().Select(m => new Mentee()
@@ -52,7 +52,7 @@ namespace A2UserCRUD.Services
 
         public Mentee UpdateMentee(string id, Mentee mentee)
         {
-            string query = "UPDATE mentee SET User_id='" + mentee.User_id + "', Mentor_id='" + mentee.Mentor_id + "', Qualification='" + mentee.Qualification + "' WHERE Mentee_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Mentee` SET User_id='" + mentee.User_id + "', Mentor_id='" + mentee.Mentor_id + "', Qualification='" + mentee.Qualification + "' WHERE Mentee_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

@@ -17,7 +17,7 @@ namespace A2UserCRUD.Services
 
         public UserGroups AddUserGroup(UserGroups userGroup)
         {
-            string query = "INSERT INTO usergroups (UG_id, User_id, Group_id) VALUES(" + userGroup.UG_id + "," + userGroup.User_id + "," + userGroup.Group_id + ")";
+            string query = "INSERT INTO `mentoringacademy`.`UserGroups` (UG_id, User_id, Group_id) VALUES(" + userGroup.UG_id + "," + userGroup.User_id + "," + userGroup.Group_id + ")";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -27,7 +27,7 @@ namespace A2UserCRUD.Services
 
         public string DeleteUserGroup(string id)
         {
-            string query = "DELETE FROM usergroups WHERE UG_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`UserGroups` WHERE UG_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -37,7 +37,7 @@ namespace A2UserCRUD.Services
 
         public List<UserGroups> GetUserGroups()
         {
-            string query = "SELECT * FROM usergroups";
+            string query = "SELECT * FROM `mentoringacademy`.`UserGroups`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<UserGroups> _UGs = result.AsEnumerable().Select(m => new UserGroups()
@@ -53,7 +53,7 @@ namespace A2UserCRUD.Services
 
         public UserGroups UpdateUserGroup(string id, UserGroups userGroups)
         {
-            string query = "UPDATE usergroups SET User_id='" + userGroups.User_id + "', Group_id='" + userGroups.Group_id + "' WHERE UG_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`UserGroups` SET User_id='" + userGroups.User_id + "', Group_id='" + userGroups.Group_id + "' WHERE UG_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

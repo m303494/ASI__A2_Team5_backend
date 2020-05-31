@@ -66,8 +66,13 @@ namespace A2UserCRUD.Controller
         public ActionResult<string> DeleteUser(string id)
         {
             _service.DeleteUser(id);
-            //_logger.LogInformation("products", _products);
             return id;
+        }
+        
+        [HttpPost("/api/users/auth/")]
+        public ActionResult<Nullable<Int32>> AuthUser([FromBody]User user)
+        {
+            return _service.AuthUser(user);
         }
     }
 }

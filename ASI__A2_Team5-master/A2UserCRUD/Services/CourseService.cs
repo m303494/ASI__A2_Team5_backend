@@ -19,7 +19,7 @@ namespace A2UserCRUD.Services
 
         public Course AddCourse(Course course)
         {
-            string query = "INSERT INTO course (Course_id, Course_name, School_id) VALUES(" + course.Course_id + ",'" + course.Course_name + "', '" + course.School_id + "')";
+            string query = "INSERT INTO `mentoringacademy`.`Course` (Course_id, Course_name, School_id) VALUES(" + course.Course_id + ",'" + course.Course_name + "', '" + course.School_id + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -29,7 +29,7 @@ namespace A2UserCRUD.Services
 
         public string DeleteCourse(string id)
         {
-            string query = "DELETE FROM course WHERE Course_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`Course` WHERE Course_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -39,7 +39,7 @@ namespace A2UserCRUD.Services
 
         public List<Course> GetCourses()
         {
-            string query = "SELECT * FROM course";
+            string query = "SELECT * FROM `mentoringacademy`.`Course`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<Course> _courses = result.AsEnumerable().Select(m => new Course()
@@ -55,7 +55,7 @@ namespace A2UserCRUD.Services
 
         public Course UpdateCourse(string id, Course course)
         {
-            string query = "UPDATE course SET Course_name='" + course.Course_name + "', School_id='" + course.School_id + "' WHERE Course_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Course` SET Course_name='" + course.Course_name + "', School_id='" + course.School_id + "' WHERE Course_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

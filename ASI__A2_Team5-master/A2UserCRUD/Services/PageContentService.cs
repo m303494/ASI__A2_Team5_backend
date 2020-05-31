@@ -18,7 +18,7 @@ namespace A2UserCRUD.Services
 
         public PageContent AddPage(PageContent PC)
         {
-            string query = "INSERT INTO pagecontent (Page_id, User_id, Text, Type, Date, Is_deleted) VALUES(" + PC.Page_id + ",'" + PC.User_id + "', '" + PC.Text + "', '" + PC.Type + "', '" + PC.Date + "', '" + PC.Is_deleted + "')";
+            string query = "INSERT INTO `mentoringacademy`.`PageContent` (Page_id, User_id, Text, Type, Date, Is_deleted) VALUES(" + PC.Page_id + ",'" + PC.User_id + "', '" + PC.Text + "', '" + PC.Type + "', '" + PC.Date + "', '" + PC.Is_deleted + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -29,7 +29,7 @@ namespace A2UserCRUD.Services
 
         public string DeletePage(string id)
         {
-            string query = "DELETE FROM pagecontent WHERE Page_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`PageContent` WHERE Page_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -39,7 +39,7 @@ namespace A2UserCRUD.Services
 
         public List<PageContent> GetPages()
         {
-            string query = "SELECT * FROM pagecontent";
+            string query = "SELECT * FROM `mentoringacademy`.`PageContent`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<PageContent> _PC = result.AsEnumerable().Select(m => new PageContent()
@@ -58,7 +58,7 @@ namespace A2UserCRUD.Services
 
         public PageContent UpdatePage(string id, PageContent PC)
         {
-            string query = "UPDATE pagecontent SET User_id='" + PC.User_id + "', Text='" + PC.Text + "', Type='" + PC.Type + "', Date='" + PC.Date + "', Is_deleted='" + PC.Is_deleted + "' WHERE Page_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`PageContent` SET User_id='" + PC.User_id + "', Text='" + PC.Text + "', Type='" + PC.Type + "', Date='" + PC.Date + "', Is_deleted='" + PC.Is_deleted + "' WHERE Page_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

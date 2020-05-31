@@ -16,7 +16,7 @@ namespace A2UserCRUD.Services
         }
         public Mentor AddMentor(Mentor mentor)
         {
-            string query = "INSERT INTO mentor (Mentor_id, User_id, Qualification, Year_attended, Application_Motivation) VALUES(" + mentor.Mentor_id + ",'" + mentor.User_id + "', '" + mentor.Qualification + "', '" + mentor.Year_attended + "', '" + mentor.Application_Motivation + "')";
+            string query = "INSERT INTO `mentoringacademy`.`Mentor` (Mentor_id, User_id, Qualification, Year_attended, Application_Motivation) VALUES(" + mentor.Mentor_id + ",'" + mentor.User_id + "', '" + mentor.Qualification + "', '" + mentor.Year_attended + "', '" + mentor.Application_Motivation + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -26,7 +26,7 @@ namespace A2UserCRUD.Services
 
         public string DeleteMentor(string id)
         {
-            string query = "DELETE FROM mentor WHERE Mentor_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`Mentor` WHERE Mentor_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -36,7 +36,7 @@ namespace A2UserCRUD.Services
 
         public List<Mentor> GetMentors()
         {
-            string query = "SELECT * FROM mentor";
+            string query = "SELECT * FROM `mentoringacademy`.`Mentor`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<Mentor> _mentors = result.AsEnumerable().Select(m => new Mentor()
@@ -54,7 +54,7 @@ namespace A2UserCRUD.Services
 
         public Mentor UpdateMentor(string id, Mentor mentor)
         {
-            string query = "UPDATE mentor SET User_id='" + mentor.User_id + "', Qualification='" + mentor.Qualification + "', Year_attended='" + mentor.Year_attended + "', Application_Motivation='" + mentor.Application_Motivation + "' WHERE Mentor_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Mentor` SET User_id='" + mentor.User_id + "', Qualification='" + mentor.Qualification + "', Year_attended='" + mentor.Year_attended + "', Application_Motivation='" + mentor.Application_Motivation + "' WHERE Mentor_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

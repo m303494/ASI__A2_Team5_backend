@@ -14,5 +14,7 @@ namespace A2UserCRUD.Services
         public User UpdateUser(string id, User user);
 
         public string DeleteUser(string id);
+
+        public Nullable<Int32> AuthUser(User user);
     }
 }

@@ -16,7 +16,7 @@ namespace A2UserCRUD.Services
 
         public Groups AddGroup(Groups group)
         {
-            string query = "INSERT INTO groups (Group_id, Group_No, Group_Name, Description, Date_created, Is_deleted) VALUES(" + group.Group_id + "," + group.Group_No + ", '" + group.Group_Name + "', '" + group.Description + "', '" + group.Date_created + "', " + group.Is_deleted + ")";
+            string query = "INSERT INTO `mentoringacademy`.`Groups` (Group_id, Group_No, Group_Name, Description, Date_created, Is_deleted) VALUES(" + group.Group_id + "," + group.Group_No + ", '" + group.Group_Name + "', '" + group.Description + "', '" + group.Date_created + "', " + group.Is_deleted + ")";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -26,7 +26,7 @@ namespace A2UserCRUD.Services
 
         public string DeleteGroup(string id)
         {
-            string query = "DELETE FROM groups WHERE Group_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`Groups` WHERE Group_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -36,7 +36,7 @@ namespace A2UserCRUD.Services
 
         public List<Groups> GetGroups()
         {
-            string query = "SELECT * FROM groups";
+            string query = "SELECT * FROM `mentoringacademy`.`Groups`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<Groups> _groups = result.AsEnumerable().Select(m => new Groups()
@@ -55,7 +55,7 @@ namespace A2UserCRUD.Services
 
         public Groups UpdateGroup(string id, Groups group)
         {
-            string query = "UPDATE groups SET Group_No='" + group.Group_No + "', Group_Name='" + group.Group_Name + "', Description='" + group.Description + "', Date_created='" + group.Date_created + "', Is_deleted='" + group.Is_deleted + "' WHERE Group_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Groups` SET Group_No='" + group.Group_No + "', Group_Name='" + group.Group_Name + "', Description='" + group.Description + "', Date_created='" + group.Date_created + "', Is_deleted='" + group.Is_deleted + "' WHERE Group_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

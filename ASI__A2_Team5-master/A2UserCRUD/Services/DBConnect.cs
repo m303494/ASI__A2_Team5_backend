@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using MySql.Data.MySqlClient;
+using System.Reflection;
 
 namespace A2UserCRUD
 {
@@ -12,6 +13,7 @@ namespace A2UserCRUD
     {
         private MySqlConnection connection;
         private string server;
+        private string port;
         private string database;
         private string uid;
         private string password;
@@ -24,13 +26,20 @@ namespace A2UserCRUD
 
         private void Initialize()
         {
+            /*
             server = "localhost";
             database = "mentoringacad";
             uid = "root";
             password = "";
+            */
+            server = "db4free.net";
+            port = "3306";
+            uid = "asigroup5";
+            password = "asigroup5"; 
+            database = "mentoringacademy";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + server + ";" + "PORT=" + port + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";OldGuids=true;";
 
             connection = new MySqlConnection(connectionString);
         }
@@ -147,6 +156,20 @@ namespace A2UserCRUD
             {
                 return null;
             }
+        }
+
+        public object RunSQL(string query)
+        {
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                return command.ExecuteScalar();
+            }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

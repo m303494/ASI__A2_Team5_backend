@@ -17,7 +17,7 @@ namespace A2UserCRUD.Services
 
         public Messages AddMessages(Messages message)
         {
-            string query = "INSERT INTO messages (Msg_id, Id_sender, Id_receiver, Content, TimeStamp) VALUES(" + message.Msg_id + "," + message.Id_sender + ", " + message.Id_receiver + ", '" + message.Content + "', '" + message.TimeStamp + "')";
+            string query = "INSERT INTO `mentoringacademy`.`Messages` (Msg_id, Id_sender, Id_receiver, Content, TimeStamp) VALUES(" + message.Msg_id + "," + message.Id_sender + ", " + message.Id_receiver + ", '" + message.Content + "', '" + message.TimeStamp + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -27,7 +27,7 @@ namespace A2UserCRUD.Services
 
         public String DeleteMessages(String id)
         {
-            string query = "DELETE FROM messages WHERE Msg_id='" + id + "'";
+            string query = "DELETE FROM `mentoringacademy`.`Messages` WHERE Msg_id='" + id + "'";
             var con = new DBConnect();
             con.Delete(query);
 
@@ -36,7 +36,7 @@ namespace A2UserCRUD.Services
         }
         public List<Messages> GetMessages()
         {
-            string query = "SELECT * FROM messages";
+            string query = "SELECT * FROM `mentoringacademy`.`Messages`";
             var con = new DBConnect();
             var result = con.Select(query);
             List<Messages> _messages = result.AsEnumerable().Select(m => new Messages()
@@ -54,7 +54,7 @@ namespace A2UserCRUD.Services
 
         public Messages UpdateMessages(String id, Messages message)
         {
-            string query = "UPDATE messages SET Id_sender='" + message.Id_sender + "', Id_receiver='" + message.Id_receiver + "', Content='" + message.Content + "', TimeStamp='" + message.TimeStamp + "' WHERE Msg_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Messages` SET Id_sender='" + message.Id_sender + "', Id_receiver='" + message.Id_receiver + "', Content='" + message.Content + "', TimeStamp='" + message.TimeStamp + "' WHERE Msg_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 
