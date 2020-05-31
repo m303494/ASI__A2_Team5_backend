@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +34,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/mentee")]
-        public ActionResult<Mentee> AddMentee([FromBody]Mentee mentee)
+        public HttpResponseMessage AddMentee([FromBody]Mentee mentee)
         {
-            _service.AddMentee(mentee);
-            return mentee;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddMentee(mentee);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/mentee/{id}")]

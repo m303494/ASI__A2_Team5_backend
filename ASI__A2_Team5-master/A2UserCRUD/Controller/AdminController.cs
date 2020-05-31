@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -30,10 +33,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/Admin")]
-        public ActionResult<Admin> AddAdmin([FromBody]Admin admin)
+        public HttpResponseMessage AddAdmin([FromBody]Admin admin)
         {
-            _service.AddAdmin(admin);
-            return admin;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddAdmin(admin);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/admin/{id}")]

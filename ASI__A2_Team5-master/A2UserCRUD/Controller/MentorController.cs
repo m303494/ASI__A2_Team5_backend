@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +34,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/mentor")]
-        public ActionResult<Mentor> AddMentor([FromBody]Mentor mentor)
+        public HttpResponseMessage AddMentor([FromBody]Mentor mentor)
         {
-            _service.AddMentor(mentor);
-            return mentor;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddMentor(mentor);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/mentor/{id}")]

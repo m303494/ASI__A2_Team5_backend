@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +34,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/school")]
-        public ActionResult<School> AddSchool([FromBody]School school)
+        public HttpResponseMessage AddSchool([FromBody]School school)
         {
-            _service.AddSchool(school);
-            return school;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddSchool(school);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/school/{id}")]

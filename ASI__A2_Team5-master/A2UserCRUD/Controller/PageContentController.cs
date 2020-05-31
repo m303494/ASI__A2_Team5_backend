@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +34,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/pagecontent")]
-        public ActionResult<PageContent> AddPage([FromBody]PageContent page)
+        public HttpResponseMessage AddPage([FromBody]PageContent page)
         {
-            _service.AddPage(page);
-            return page;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddPage(page);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/pagecontent/{id}")]

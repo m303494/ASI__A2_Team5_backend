@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +34,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/usergroups")]
-        public ActionResult<UserGroups> AddUserGroup([FromBody]UserGroups UG)
+        public HttpResponseMessage AddUserGroup([FromBody]UserGroups UG)
         {
-            _service.AddUserGroup(UG);
-            return UG;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddUserGroup(UG);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/usergroups/{id}")]

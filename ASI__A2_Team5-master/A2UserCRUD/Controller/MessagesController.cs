@@ -1,13 +1,21 @@
+using A2UserCRUD.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using A2UserCRUD.Services;
-using Microsoft.AspNetCore.Mvc;
+using A2UserCRUD;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
-    public class MessagesController
+
+    [ApiController]
+    [Route("[controller]")]
+    public class MessagesController:ControllerBase
     {
         private IMessagesService _service;
 
@@ -23,10 +31,19 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/messages")]
-        public ActionResult<Messages> AddMessages([FromBody]Messages message)
+        public HttpResponseMessage AddMessages([FromBody]Messages message)
         {
-            _service.AddMessages(message);
-            return message;
+            {
+                if (ModelState.IsValid)
+                {
+                    _service.AddMessages(message);
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
         }
 
         [HttpPut("/api/messages/{id}")]

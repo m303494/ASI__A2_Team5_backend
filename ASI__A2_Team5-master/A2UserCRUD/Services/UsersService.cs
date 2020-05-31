@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using A2UserCRUD;
-
+using System.Linq.Expressions;
+using MySql.Data.MySqlClient;
 
 namespace A2UserCRUD.Services
 {
@@ -21,9 +22,15 @@ namespace A2UserCRUD.Services
         {
             string query = "INSERT INTO user (User_id, Username, Gender, Nationality, Password, Birthdate, Course_id) VALUES(" + user.User_id + ",'" + user.Username + "', '" + user.Gender + "', '" + user.Nationality + "', '" + user.Password + "', '" + user.Birthdate + "', '" + user.Course_id + "')";
             var con = new DBConnect();
-            con.Insert(query);
-            
-            return user;
+            try {
+                con.Insert(query);
+                return user;
+            }
+            catch (MySqlException e)
+            {
+                System.Console.WriteLine(e.Message);
+                return null;
+            }
             throw new NotImplementedException();
         }
 

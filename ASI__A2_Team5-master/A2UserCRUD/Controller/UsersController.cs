@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using A2UserCRUD;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 
 namespace A2UserCRUD.Controller
 {
@@ -31,10 +35,24 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/users")]
-        public ActionResult<User> AddUser([FromBody]User user)
+        public HttpResponseMessage AddUser([FromBody]User user)
         {
-            _service.AddUser(user);
-            return user;
+            if (ModelState.IsValid)
+            {
+                if(_service.AddUser(user)==null)
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }               
+                
+            }
+            else
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
         }
 
         [HttpPut("/api/users/{id}")]
