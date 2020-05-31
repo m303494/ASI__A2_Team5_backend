@@ -63,6 +63,25 @@ namespace A2UserCRUD.Services
             return _users;
             throw new NotImplementedException();
         }
+        public List<User> GetUserById(string id)
+        {
+            string query = "SELECT * FROM `mentoringacademy`.`User` WHERE User_id='" + id + "'";
+            var con = new DBConnect();
+            var result = con.Select(query);
+            List<User> _users = result.AsEnumerable().Select(m => new User()
+            {
+                User_id = m.Field<Int32>("User_id"),
+                Username = m.Field<string>("Username"),
+                Gender = m.Field<string>("Gender"),
+                Nationality = m.Field<string>("Nationality"),
+                Password = m.Field<string>("Password"),
+                Birthdate = m.Field<string>("Birthdate"),
+                Course_id = m.Field<Int32>("Course_id"),
+            }).ToList();
+
+            return _users;
+            throw new NotImplementedException();
+        }
 
         public User UpdateUser(string id, User user)
         {

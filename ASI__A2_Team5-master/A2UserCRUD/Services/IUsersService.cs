@@ -9,6 +9,8 @@ namespace A2UserCRUD.Services
     {
         public List<User> GetUsers();
 
+        public List<User> GetUserById(string id);
+
         public User AddUser(User user);
 
         public User UpdateUser(string id, User user);

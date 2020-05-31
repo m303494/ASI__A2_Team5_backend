@@ -34,6 +34,12 @@ namespace A2UserCRUD.Controller
             return _service.GetUsers();
         }
 
+        [HttpGet("/api/users/{id}")]
+        public ActionResult<List<User>> GetUserById(string id)
+        {
+            return _service.GetUserById(id);
+        }
+
         [HttpPost("/api/users")]
         public HttpResponseMessage AddUser([FromBody]User user)
         {
