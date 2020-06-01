@@ -31,7 +31,6 @@ namespace A2UserCRUD.Services
                 System.Console.WriteLine(e.Message);
                 return null;
             }
-            throw new NotImplementedException();
         }
 
         public string DeleteUser(string id)

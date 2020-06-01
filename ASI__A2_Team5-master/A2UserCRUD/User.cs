@@ -9,7 +9,7 @@ namespace A2UserCRUD
     public class User
     {
         public int User_id { get; set; }
-        [Required]
+
         [StringLength(50)]
         public String Username { get; set; }
 
@@ -18,7 +18,7 @@ namespace A2UserCRUD
 
         [StringLength(50)]
         public String Nationality { get; set; }
-        [Required]
+
         [StringLength(50)]
         public String Password { get; set; }
 

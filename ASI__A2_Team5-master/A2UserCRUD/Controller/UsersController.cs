@@ -41,23 +41,26 @@ namespace A2UserCRUD.Controller
         }
 
         [HttpPost("/api/users")]
-        public HttpResponseMessage AddUser([FromBody]User user)
+        //public HttpResponseMessage AddUser([FromBody]User user)
+        public string AddUser([FromBody]User user)
         {
-            if (ModelState.IsValid)
+            if (user.Username == null || user.Password == null)
             {
-                if(_service.AddUser(user)==null)
-                {
-                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
-                }
-                else
-                {
-                    return new HttpResponseMessage(HttpStatusCode.OK);
-                }               
-                
+                return "0";
             }
             else
             {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                //return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                if (_service.AddUser(user) == null)
+                {
+                    //return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                    return "2";
+                }
+                else
+                {
+                    //return new HttpResponseMessage(HttpStatusCode.OK);
+                    return "1";
+                }
             }
         }
 
