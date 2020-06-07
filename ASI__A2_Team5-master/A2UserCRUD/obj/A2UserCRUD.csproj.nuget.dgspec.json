@@ -48,6 +48,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.20, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [

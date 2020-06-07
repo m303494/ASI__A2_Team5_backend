@@ -31,11 +31,17 @@ namespace A2UserCRUD
             database = "mentoringacad";
             uid = "root";
             password = "";
-            */
+            
             server = "db4free.net";
             port = "3306";
             uid = "asigroup5";
             password = "asigroup5"; 
+            database = "mentoringacademy";
+            */
+            server = "mentoringipb.mysql.database.azure.com";
+            port = "3306";
+            uid = "mentoring5@mentoringipb";
+            password = "Mentoring.5";
             database = "mentoringacademy";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "PORT=" + port + ";" + "DATABASE=" +
