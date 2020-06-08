@@ -106,3 +106,9 @@ C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserC
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Release\netcoreapp3.1\A2UserCRUD.dll
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Release\netcoreapp3.1\A2UserCRUD.pdb
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Release\netcoreapp3.1\A2UserCRUD.genruntimeconfig.cache
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
