@@ -7700,11 +7700,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\source\\repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
       "projectName": "A2UserCRUD",
-      "projectPath": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
+      "projectPath": "C:\\Users\\usuario\\source\\repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\source\\repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7757,12 +7757,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7771,7 +7765,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

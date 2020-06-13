@@ -17,7 +17,7 @@ namespace A2UserCRUD.Services
 
         public Messages AddMessages(Messages message)
         {
-            string query = "INSERT INTO `mentoringacademy`.`Messages` (Msg_id, Id_sender, Id_receiver, Content, TimeStamp) VALUES(" + message.Msg_id + "," + message.Id_sender + ", " + message.Id_receiver + ", '" + message.Content + "', '" + message.TimeStamp + "')";
+            string query = "INSERT INTO `mentoringacademy`.`Messages` (Msg_id, Id_sender, Id_receiver, Content, TimeStamp, Url) VALUES(" + message.Msg_id + "," + message.Id_sender + ", " + message.Id_receiver + ", '" + message.Content + "', '" + message.TimeStamp + "', '" + message.Url + "')";
             var con = new DBConnect();
             con.Insert(query);
 
@@ -45,7 +45,8 @@ namespace A2UserCRUD.Services
                 Id_sender = m.Field<Int32>("Id_sender"),
                 Id_receiver = m.Field<Int32>("Id_receiver"),
                 Content = m.Field<string>("Content"),
-                TimeStamp = m.Field<string>("TimeStamp")
+                TimeStamp = m.Field<string>("TimeStamp"),
+                Url = m.Field<string>("Url")
             }).ToList();
 
             return _messages;
@@ -54,7 +55,7 @@ namespace A2UserCRUD.Services
 
         public Messages UpdateMessages(String id, Messages message)
         {
-            string query = "UPDATE `mentoringacademy`.`Messages` SET Id_sender='" + message.Id_sender + "', Id_receiver='" + message.Id_receiver + "', Content='" + message.Content + "', TimeStamp='" + message.TimeStamp + "' WHERE Msg_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`Messages` SET Id_sender='" + message.Id_sender + "', Id_receiver='" + message.Id_receiver + "', Content='" + message.Content + "', TimeStamp='" + message.TimeStamp + "', Url='" + message.Url + "' WHERE Msg_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 

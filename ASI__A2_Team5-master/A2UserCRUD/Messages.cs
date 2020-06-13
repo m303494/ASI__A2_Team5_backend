@@ -17,5 +17,6 @@ namespace A2UserCRUD
         public String Content { get; set; }
         [Required]
         public String TimeStamp { get; set; }
+        public String Url { get; set; } 
     }
 }

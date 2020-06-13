@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CMYFWHJi64SfA9OUeuK7g1+VEuom513EsVtz2tMxbnh5a+t6dJmM6S1sAiNVR5bFcK48RA69+jh8UDYjnzRDYA==",
+  "dgSpecHash": "TQNRHyFGhGDfmLwIjDwbWnCyuPNT7B/XtRuL5XX6epc7yt7Jztvv+MtDpWm9PvXrIKBp5WLMrjJrSIVeS8RUdg==",
   "success": true,
   "projectFilePath": "C:\\Users\\usuario\\Source\\Repos\\ASI__A2_Team5_backend\\ASI__A2_Team5-master\\A2UserCRUD\\A2UserCRUD.csproj",
   "expectedPackageFiles": [
@@ -141,8 +141,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\usuario\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
   "logs": []
 }
