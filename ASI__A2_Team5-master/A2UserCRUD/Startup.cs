@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using A2UserCRUD.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace A2UserCRUD
 {
@@ -47,6 +48,12 @@ namespace A2UserCRUD
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
+
+
 
             app.UseHttpsRedirection();
 
@@ -54,9 +61,15 @@ namespace A2UserCRUD
 
             app.UseAuthorization();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.Run(async(context)=>{
+                await context.Response.WriteAsync("Could not find anything....");
             });
         }
     }
