@@ -128,11 +128,6 @@ E:\ASI__A2_Team5-master\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\
 E:\ASI__A2_Team5-master\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\ASI__A2_Team5-master\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.MvcApplicationPartsAssemblyInfo.cache
 E:\ASI__A2_Team5-master\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csproj.CopyComplete
-C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csprojAssemblyReference.cache
-C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.AssemblyInfoInputs.cache
-C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.AssemblyInfo.cs
-C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csproj.CoreCompileInputs.cache
-C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -244,6 +239,10 @@ C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserC
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.AssemblyInfoInputs.cache
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.AssemblyInfo.cs
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.RazorTargetAssemblyInfo.cache
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\staticwebassets\A2UserCRUD.StaticWebAssets.Manifest.cache
@@ -251,3 +250,4 @@ C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserC
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.dll
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.pdb
 C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.genruntimeconfig.cache
+C:\Users\usuario\Source\Repos\ASI__A2_Team5_backend\ASI__A2_Team5-master\A2UserCRUD\obj\Debug\netcoreapp3.1\A2UserCRUD.csprojAssemblyReference.cache
