@@ -15,18 +15,36 @@ namespace A2UserCRUD.Controller
         {
             _environment = environment ?? throw new ArgumentNullException(nameof(environment));
         }
+
+
+
+
         // POST: api/Image
         [HttpPost]
-        public async Task Post(IFormFile file)
+        public async Task<string> Post(IFormFile file)
         {
-            var uploads = Path.Combine(_environment.WebRootPath, "uploads");
-            if (file.Length > 0)
+            try
             {
-                using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                var uploads = Path.Combine(_environment.WebRootPath, "uploads");
+                if (file.Length > 0)
                 {
-                    await file.CopyToAsync(fileStream);
+                    using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                    {
+                        await file.CopyToAsync(fileStream);
+                        return "/api/Gallery/" + file.FileName;
+                    }
+                }
+                else
+                {
+                    return "Failed! Something went wrong!";
                 }
             }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
+            }
         }
+
+
     }
 }
