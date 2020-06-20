@@ -26,5 +26,9 @@ namespace A2UserCRUD
         public string Birthdate { get; set; }
 
         public Nullable<int> Course_id { get; set; }
+
+        public String Profile { get; set; }
+
+        public String Cover { get; set; }
     }
 }

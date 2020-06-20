@@ -20,7 +20,7 @@ namespace A2UserCRUD.Services
 
         public User AddUser(User user)
         {
-            string query = "INSERT INTO `mentoringacademy`.`User` (Username, Gender, Nationality, Password, Birthdate, Course_id) VALUES('" + user.Username + "', '" + user.Gender + "', '" + user.Nationality + "', '" + user.Password + "', '" + user.Birthdate + "', '" + user.Course_id + "')";
+            string query = "INSERT INTO `mentoringacademy`.`User` (Username, Gender, Nationality, Password, Birthdate, Course_id, Profile, Cover) VALUES('" + user.Username + "', '" + user.Gender + "', '" + user.Nationality + "', '" + user.Password + "', '" + user.Birthdate + "', '" + user.Course_id + "', '" + user.Profile + "', '" + user.Cover + "')";
             var con = new DBConnect();
             try {
                 con.Insert(query);
@@ -57,6 +57,8 @@ namespace A2UserCRUD.Services
                 Password = m.Field<string>("Password"),
                 Birthdate = m.Field<string>("Birthdate"),
                 Course_id = m.Field<Int32>("Course_id"),
+                Profile = m.Field<string>("Profile"),
+                Cover = m.Field<string>("Cover"),
             }).ToList();
 
             return _users;
@@ -76,6 +78,8 @@ namespace A2UserCRUD.Services
                 Password = m.Field<string>("Password"),
                 Birthdate = m.Field<string>("Birthdate"),
                 Course_id = m.Field<Int32>("Course_id"),
+                Profile = m.Field<string>("Profile"),
+                Cover = m.Field<string>("Cover"),
             }).ToList();
 
             return _users;
@@ -84,7 +88,7 @@ namespace A2UserCRUD.Services
 
         public User UpdateUser(string id, User user)
         {
-            string query = "UPDATE `mentoringacademy`.`User` SET Username='" + user.Username + "', Gender='" + user.Gender + "', Nationality='" + user.Nationality + "', Password='" + user.Password + "', Birthdate='" + user.Birthdate + "', Course_id='" + user.Course_id + "' WHERE User_id='" + id + "'";
+            string query = "UPDATE `mentoringacademy`.`User` SET Username='" + user.Username + "', Gender='" + user.Gender + "', Nationality='" + user.Nationality + "', Password='" + user.Password + "', Birthdate='" + user.Birthdate + "', Course_id='" + user.Course_id + "', Profile='" + user.Profile + "', Cover='" + user.Cover + "' WHERE User_id='" + id + "'";
             var con = new DBConnect();
             con.Update(query);
 
